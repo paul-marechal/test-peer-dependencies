@@ -1,0 +1,23 @@
+{
+  "name": "test-peer-dependencies",
+  "version": "0.0.0",
+  "description": "Test npm/yarn peer dependencies",
+  "main": "index.js",
+  "author": "Paul Maréchal <paul.marechal@ericsson.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^12.7.2",
+    "lerna": "^3.16.4",
+    "typescript": "^3.5.3"
+  },
+  "scripts": {
+    "postinstall": "lerna exec --scope @paul/ext-* \"yarn --registry http://localhost:4873\"",
+    "publish:peer.v1": "cd peer.v1 && yarn publish --registry http://localhost:4873",
+    "publish:peer.v2": "cd peer.v2 && yarn publish --registry http://localhost:4873",
+    "publish:peer": "yarn publish:peer.v1; yarn publish:peer.v2",
+    "publish:exts": "lerna exec --concurrency 1 --scope @paul/ext-* \"yarn publish --registry http://localhost:4873\"",
+    "install:apps": "lerna exec --concurrency 1 --scope @paul/app-* \"yarn --registry http://localhost:4873\"",
+    "start": "lerna run --concurrency 1 --scope @paul/app-* start"
+  }
+}

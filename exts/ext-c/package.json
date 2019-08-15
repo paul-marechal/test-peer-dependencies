@@ -1,0 +1,12 @@
+{
+  "name": "@paul/ext-c",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "peerDependencies": {
+    "@paul/peer": "2"
+  },
+  "devDependencies": {
+    "@paul/peer": "2"
+  }
+}

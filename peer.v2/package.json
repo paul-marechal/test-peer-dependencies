@@ -1,0 +1,6 @@
+{
+  "name": "@paul/peer",
+  "version": "2.3.4",
+  "main": "index.js",
+  "license": "MIT"
+}

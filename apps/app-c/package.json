@@ -1,0 +1,14 @@
+{
+  "name": "@paul/app-c",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@paul/ext-a": "*",
+    "@paul/ext-b": "*"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
